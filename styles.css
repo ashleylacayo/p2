@@ -1,0 +1,418 @@
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+article, aside, details, figcaption, figure, footer, header, main, nav, section, summary {
+    display:block;
+}
+
+body {
+	font-family: 'Josefin Sans', sans-serif;
+	color: #ffffff;
+	background-color: black;
+}
+
+.sidenav {
+	display: none;
+}
+
+.logo{
+	width: 35%;
+	margin-left: 30%;
+	margin-top: 0%;
+	margin-bottom: 10%;
+}
+
+/********************** START HAMBURGER MENU **********************************/
+
+#menuToggle
+{
+  display: block;
+  position: relative;
+  top: 20px;
+  left: 20px;
+  z-index: 1;
+}
+
+#menuToggle a
+{
+  text-decoration: none;
+  color: #232323;
+
+  transition: color 0.3s ease;
+}
+
+#menuToggle a:hover
+{
+  color: #d1af89;
+}
+
+
+#menuToggle input
+{
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+
+  cursor: pointer;
+
+  opacity: 0;
+  z-index: 2;
+
+  -webkit-touch-callout: none;
+}
+#menuToggle span
+{
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+
+  background: white;
+  border-radius: 3px;
+
+  z-index: 1;
+
+  transform-origin: 4px 0px;
+
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+#menuToggle span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+#menuToggle input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #d1af89;
+}
+
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+#menu
+{
+  position: absolute;
+  max-width: 600px;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px;
+
+  background: #ededed;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#menu li
+{
+  padding: 10px 0;
+  font-size: 1rem;
+}
+
+#menuToggle input:checked ~ ul
+{
+  transform: none;
+}
+
+/********************** END HAMBURGER MENU **********************************/
+
+/********************** SIDENAV MENU **********************************/
+
+/* nav ul {
+	list-style-type: none;
+	margin-top: 3%;
+}
+
+nav ul li {
+	display: block;
+	margin-left: 20%;
+	text-align: center;
+	list-style-type: none;
+	padding: 4%;
+}
+
+nav ul li a {
+	color: #ffffff;
+	font-size: 1rem;
+	text-decoration: none;
+
+}*/
+
+nav ul li a:hover {
+  text-decoration: line-through;
+}
+
+/********************** SIDENAV MENU *****************************/
+
+#work-container {
+	display: flex;
+}
+
+.sidenav {
+	flex: 0 50%;
+}
+
+.image-grid {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	align-content: center;
+	height:100vh;
+	cursor: pointer;
+}
+
+.home {
+		display: flex;
+		/*flex-wrap: wrap;*/
+		justify-content: flex-end;
+}
+
+img {
+	max-width: 100%;
+}
+
+article {
+	padding: 2%;
+}
+
+.icons img {
+    margin-left: 17%;
+    margin-top: 12%;
+    padding: 2%;
+}
+
+
+footer {
+	margin: 0;
+	top: 0%;
+	padding: 3%;
+	text-align: center;
+  width: 94%;
+}
+
+
+
+/********************** START CONTACT FORM **********************************/
+
+.form {
+	padding: 0% 6% 3% 13%;
+  width: 70%;
+}
+
+h1 {
+	text-align: center;
+	font-kerning: auto;
+	padding-bottom: 15%;
+}
+
+input {
+	border: none;
+	border-bottom: 2px solid white;
+	background-color: black;
+	color:white;
+	width: 100%;
+  padding: 2%;
+  margin: 5% 0;
+}
+
+.submit input{
+  background-color: #d1af89;
+  color:black;
+  padding: 3%;
+	width: 108%;
+}
+/********************** END CONTACT FORM **********************************/
+
+/********START LIGHTBOX ***********/
+
+/********************** START 600px min-width media **************/
+@media (min-width:700px) and (max-width:10800px) {
+
+	.menu {
+		display: none;
+	}
+
+	.logo {
+		display: none;
+	}
+
+	 #menuToggle{
+		 display: none;
+	 }
+
+	.sidenav {
+	display: block;
+  background-color: black;
+	padding: 1%;
+  margin-right: 6%;
+
+}
+
+	.sidenav nav ul {
+		display: block;
+		list-style-type: none;
+		margin-top: 3%;
+		padding: 10%;
+
+	}
+
+	.sidenav li {
+		display: block;
+		margin-top: 8%;
+		margin-left: 11%;
+		list-style-type: none;
+		padding: 7%;
+	}
+
+	.sidenav a {
+		color: #ffffff;
+		font-size: 1rem;
+		text-decoration: none;
+
+	}
+
+	.sidenav a:hover {
+	  text-decoration: line-through;
+	}
+
+	.logo2{
+		display: flex;
+		flex-grow: 1;
+		min-width: 90px;
+		max-width: 130px;
+		margin-top: 0%;
+		padding: 20% 10% 12% 15%;
+	}
+
+	.home img{
+		margin-top: 0;
+		float: right;
+	}
+
+	figure {
+    flex-grow: 1;
+    /* justify-items: flex-end; */
+    /* margin-top: 3%; */
+    display: flex;
+    /* flex-shrink: 4; */
+    margin: 0;
+    width: 50%;
+	}
+
+	.form {
+    padding: 20% 14% 25% 10%;
+    width: 70%;
+	}
+
+}
+
+/********************** START 1100px min-width media **************/
+@media (min-width:1100px) {
+
+	 .menu {
+		display: none;
+	}
+
+	.logo {
+		display: none;
+	}
+
+	 #menuToggle{
+		 display: none;
+	 }
+
+	.sidenav {
+		display: block;
+		height:100%;
+    background-color: black;
+    padding: 1%;
+    /* margin-right: -4%; */
+    /* margin-left: 0%; */
+
+}
+
+	.sidenav nav ul {
+			display: block;
+			list-style-type: none;
+			margin-top: 3%;
+			padding: 10%;
+
+	}
+
+	.sidenav li {
+    display: block;
+    margin-top: 8%;
+    margin-left: 11%;
+    list-style-type: none;
+    padding: 7%;
+	}
+
+	.sidenav a {
+		color: #ffffff;
+		font-size: 1.5rem;
+		text-decoration: none;
+
+	}
+
+	.sidenav a:hover {
+	  text-decoration: line-through;
+	}
+
+	.logo2{
+		display: flex;
+		flex-grow: 1;
+		min-width: 90px;
+		max-width: 130px;
+		margin-top: 0%;
+		padding: 20% 10% 12% 15%;
+	}
+
+	.home img{
+		margin-top: 0;
+		float: right;
+	}
+	figure {
+		width: 32.3%;
+	}
+
+	.form {
+    padding: 20% 14% 25% 10%;
+    width: 70%;
+	}
+
+	.icons img {
+    margin-left: 26%;
+    margin-top: 16%;
+    padding: 0%;
+    display: flex;
+    min-width: 30px;
+}
